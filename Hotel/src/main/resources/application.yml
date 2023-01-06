@@ -1,0 +1,36 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  main:
+    allow-circular-references: true
+  thymeleaf:
+    enabled: true
+    prefix: classpath:templates/
+    suffix: .html
+    cache: true
+    encoding: UTF-8
+    mode: HTML
+    check-template: true
+    check-template-location: true
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/hotel?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 1111
+      connection-test-query: SELECT NOW() FROM dual
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+server:
+  port: 8087
+
+file:
+  roomUpimg: C:/img/
+  roomfolder: file:///img/

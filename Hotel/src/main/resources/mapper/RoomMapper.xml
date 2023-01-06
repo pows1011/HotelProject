@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hotel.mapper.RoomMapper">
+
+	<resultMap type="com.hotel.model.Room" id="RoomMap">
+		<id property="room_num" column="room_num" /> <!-- id에는 프라이머리키 -->
+		<result property="room_location" column="room_location" />
+		<result property="room_origimg" column="room_origimg" />
+		<result property="room_img" column="room_img" />
+		<result property="room_name" column="room_name" />
+		<result property="room_person" column="room_person" />
+		<result property="room_type" column="room_type" />
+		<result property="room_price" column="room_price" />
+	</resultMap>
+
+	<insert id="AddRoom" parameterType="com.hotel.mapper.RoomMapper">
+		INSERT INTO room VALUES (
+		0,#{room_location},#{room_origimg},#{room_img},#{room_name},#{room_person},#{room_type},#{room_price}
+		)
+	</insert>
+</mapper>
